@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="DYM's Concert Shop: Buy tickets for exclusive concerts in Kyiv!">
+    <meta name="keywords" content="Concert, Tickets, DYM, Ukrainian Music">
+    <meta name="author" content="Dym Production">
+    <title>DYM</title>
+    <link rel="stylesheet" href="concertshop.css">
+</head>
+<body>
+
+    
+    
+
+    <header>
+        <div class="navbar">
+
+            
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+<div id="menu" class="menu">
+  <a href="main.html">Головна</a>
+  <a href="https://www.youtube.com/channel/UCvRrXe8xhfzUUH8oTJRQseA">Треки</a>
+  <a href="#">Контакти</a>
+</div>
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('open');
+  }
+</script>
+
+<style>
+  .hamburger {
+    font-size: 30px;
+    cursor: pointer;
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    background-color: #333;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 100%;
+  }
+
+  .menu.open {
+    display: flex;
+  }
+
+  .menu a {
+    color: white;
+    padding: 15px;
+    text-decoration: none;
+    text-align: center;
+  }
+
+  .menu a:hover {
+    background-color: #575757;
+  }
+</style>
+
+        </div>
+    </header>
+    <div class="main-content">
+        <h1 id="dynamicText" class="typing-effect"></h1>
+
+<script>
+  const text = "Welcome to the Concert Shop";
+  let index = 0;
+
+  function typeEffect() {
+      if (index < text.length) {
+          document.getElementById('dynamicText').innerHTML += text.charAt(index);
+          index++;
+          setTimeout(typeEffect, 100);
+      }
+  }
+
+  typeEffect();
+</script>
+
+<style>
+  .typing-effect {
+      font-family: 'Courier New', Courier, monospace;
+      border-right: 2px solid black;
+      display: inline-block;
+      white-space: nowrap;
+      overflow: hidden;
+  }
+</style>
+
+
+        <p>Here you can buy tickets</p>
+    </div>
+
+
+    <h2>Product list</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Концерт 1: "Мелодії Свободи"</td>
+                <td>1200₴</td>
+            </tr>
+            <tr>
+                <td>Концерт 2: "Ритм Міста"</td>
+                <td>900₴</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div id="countdownTimer">
+        <p>Продаж розпочнеться через: <span id="timer"></span></p>
+    </div>
+    <h1>Концерт 1: "Мелодії Свободи"</h1>
+
+    <li>
+        <ul>Дата: 12 листопада 2024 року</ul>
+        <ul>Місце проведення: Палац Україна, Київ</ul>
+        <ul>Опис: Запрошуємо на унікальний вечір сучасної української музики на концерті "Мелодії Свободи"! На сцені виступатимуть зірки української поп, рок та реп-сцени, включаючи популярних виконавців, що здобули любов слухачів за свій вклад у розвиток незалежної музичної культури. Вечір буде насичений потужними треками, які піднімуть дух та об'єднають усіх присутніх в єдиному пориві. Це концерт, який не можна пропустити!</ul>
+    </li>
+
+    <div>
+        <h3>Рейтинг: <span id="ratingConcert1">0</span>/5</h3>
+        <button onclick="rateConcert('ratingConcert1', 1)">★</button>
+        <button onclick="rateConcert('ratingConcert1', 2)">★</button>
+        <button onclick="rateConcert('ratingConcert1', 3)">★</button>
+        <button onclick="rateConcert('ratingConcert1', 4)">★</button>
+        <button onclick="rateConcert('ratingConcert1', 5)">★</button>
+    </div>
+
+    <h1>Концерт 2: "Ритм Міста"</h1>
+
+    <li>
+        <ul>Дата: 25 листопада 2024 року</ul>
+        <ul>Місце проведення: Stereo Plaza, Київ</ul>
+        <ul>Опис: Приготуйтеся зануритися у світ ритмів та енергії на масштабному концерті "Ритм Міста"! На вас чекає неймовірний лайнап з талановитих діджеїв та електронних виконавців, які підготували сет-листи з ексклюзивних треків та реміксів. Концерт відбудеться в атмосферному залі Stereo Plaza, де можна буде відчути музику на повну силу. Вечір обіцяє стати незабутнім для всіх фанатів електронної музики!</ul>
+    </li>
+
+    <h3>Рейтинг: <span id="ratingConcert2">0</span>/5</h3>
+        <button onclick="rateConcert2('ratingConcert2', 1)">★</button>
+        <button onclick="rateConcert2('ratingConcert2', 2)">★</button>
+        <button onclick="rateConcert2('ratingConcert2', 3)">★</button>
+        <button onclick="rateConcert2('ratingConcert2', 4)">★</button>
+        <button onclick="rateConcert2('ratingConcert2', 5)">★</button>
+    
+    <button id="getTicketBtn">Get Ticket</button>
+    
+        
+    
+      
+    
+
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeProductModal">&times;</span>
+            <h2>Вибір товару</h2>
+            <select id="productSelect">
+                <option value="concert1">Концерт 1: "Мелодії Свободи" (1200₴)</option>
+                <option value="concert2">Концерт 2: "Ритм Міста" (900₴)</option>
+            </select>
+            <h3>Choose the number of tickets:</h3>
+<input type="range" min="1" max="10" value="1" class="slider" id="ticketSlider">
+<p>Tickets: <span id="ticketCount">1</span></p>
+
+<script>
+  const slider = document.getElementById("ticketSlider");
+  const ticketCount = document.getElementById("ticketCount");
+
+  slider.oninput = function() {
+    ticketCount.textContent = slider.value;
+  };
+</script>
+
+<style>
+  .slider {
+      width: 100%;
+      height: 10px;
+      background: #ddd;
+      outline: none;
+      opacity: 0.7;
+      transition: opacity .2s;
+  }
+
+  .slider:hover {
+      opacity: 1;
+  }
+</style>
+
+
+
+
+
+
+            <p id="ticketsSold">Продано квитків: 0</p>
+                <div id="paypal-button-container"></div> 
+        </div>
+    </div>
+    
+
+
+    <script src="https://www.paypal.com/sdk/js?client-id=AcLgCHeSafzMoDxsHgv9QqM4wzNbF72wdA3TLk__dubp0CPjkApjk50VZDDRLdPRclJT6WS7nrt4P104&currency=USD"></script>
+    <!-- Замініть YOUR_CLIENT_ID на ваш ідентифікатор клієнта -->
+    <div id="paypal-button-container"></div>
+
+    <script>
+        paypal.Buttons({
+            createOrder: function(data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: '10.00' // Замініть на суму оплати
+                            
+                        }
+                    }]
+                });
+            },
+            onApprove: function(data, actions) {
+                return actions.order.capture().then(function(details) {
+                    alert('Transaction completed by ' + details.payer.name.given_name);
+                    console.log(details);
+                });
+            },
+            onError: function(err) {
+                console.error(err);
+            }
+        }).render('#paypal-button-container');
+    </script>
+
+
+
+
+
+<style>
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.8);
+        animation: fadeIn 0.5s;
+    }
+  
+    .modal-content {
+        margin: 15% auto;
+        padding: 20px;
+        background: white;
+        border-radius: 10px;
+        width: 80%;
+        max-width: 500px;
+        animation: slideIn 0.5s;
+    }
+  
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+  
+    @keyframes slideIn {
+        from {
+            transform: translateY(-50px);
+        }
+        to {
+            transform: translateY(0);
+        }
+    }
+  
+    button:hover {
+        background-color: #444;
+        color: #fff;
+        transition: 0.3s;
+    }
+  </style>
+  
+        
+
+
+</div>
+    </div>
+    
+
+    
+    
+    
+
+    <button id="scrollToTop" style="display: none;">⬆️</button>
+
+<script>
+  const scrollToTopBtn = document.getElementById('scrollToTop');
+
+  window.onscroll = function () {
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+          scrollToTopBtn.style.display = 'block';
+      } else {
+          scrollToTopBtn.style.display = 'none';
+      }
+  };
+
+  scrollToTopBtn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
+<style>
+  #scrollToTop {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      padding: 10px 15px;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  #scrollToTop:hover {
+      background-color: #0056b3;
+  }
+</style>
+
+
+
+
+
+
+
+    <section id="subscribe">
+      <h2>Підпишіться на наші новини</h2>
+      <form id="subscribeForm">
+          <input type="email" id="emailInput" placeholder="Ваш email" required>
+          <button type="submit">Підписатися</button>
+      </form>
+      <p id="subscribeMessage"></p>
+  </section>
+
+
+    <footer>
+        <p>© 2024 Dym production. All rights reserved.</p>
+        <div class="social-icons">
+          <a href="https://www.youtube.com/channel/UCvRrXe8xhfzUUH8oTJRQseA" target="_blank" rel="noopener noreferrer">Youtube</a> |
+          <a href="https://www.tiktok.com/@dym18441" target="_blank" rel="noopener noreferrer">Tiktok</a> |
+          <a href="https://x.com/dymov4586" target="_blank" rel="noopener noreferrer">Twitter</a>
+      </div>     
+    </footer>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
